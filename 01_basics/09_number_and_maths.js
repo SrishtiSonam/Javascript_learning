@@ -45,6 +45,6 @@ console.log(Math.floor(Math.random()*10)+1);        // For integers
 
 const max = 100;
 const min = 90;
-console.log(Math.floor((Math.random()*(max-min+1))+min));      // above 0
+console.log(Math.floor((Math.random()*(max-min+1))+min));      // *******************
 
 
