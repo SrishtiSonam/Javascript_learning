@@ -151,26 +151,169 @@ names = ["Srishti","Shreya","Tanvi"]
 // console.log(values);            //  undefined
 
 
-const numbers = [1,2,3,4,5,6,7,8,9,10]
+// const numbers = [1,2,3,4,5,6,7,8,9,10]
 
-numbers.filter( (num) => num>5 )            // It will return the values but no log so no print
+// numbers.filter( (num) => num>5 )            // It will return the values but no log so no print
 
-const numLessThanFive = numbers.filter( (num) => num<5 ) 
-console.log(numLessThanFive);
+// const numLessThanFive = numbers.filter( (num) => num<5 ) 
+// console.log(numLessThanFive);
 
-let numMoreThanFive = numbers.filter( (num) => {
-    num>5 
-}) 
-console.log(numMoreThanFive);           //  []
-numMoreThanFive = numbers.filter( (num) => {
-    return num>5 
-}) 
-console.log(numMoreThanFive); 
+// let numMoreThanFive = numbers.filter( (num) => {
+//     num>5 
+// }) 
+// console.log(numMoreThanFive);           //  []
+// numMoreThanFive = numbers.filter( (num) => {
+//     return num>5 
+// }) 
+// console.log(numMoreThanFive); 
 
-evenNumbers = []
-numbers.forEach( (num)=>{
-    if (num%2==0){
-        evenNumbers.push(num)
+// evenNumbers = []
+// numbers.forEach( (num)=>{
+//     if (num%2==0){
+//         evenNumbers.push(num)
+//     }
+// } )
+// console.log(evenNumbers);
+
+const books = [
+    {
+      title: "The Great Gatsby",
+      genre: "Fiction",
+      publish: 1925,
+      edition: 1999
+    },
+    {
+      title: "Harry Potter and the Sorcerer's Stone",
+      genre: "Fantasy",
+      publish: 1997,
+      edition: 2010
+    },
+    {
+      title: "To Kill a Mockingbird",
+      genre: "Fiction",
+      publish: 1960,
+      edition: 2003
+    },
+    {
+      title: "The Hobbit",
+      genre: "Fantasy",
+      publish: 1937,
+      edition: 2000
     }
-} )
-console.log(evenNumbers);
+  ];
+
+//   let userBooks = books.filter( (book) => book.genre === 'Fantasy' )
+// //   [
+// //     {
+// //       title: "Harry Potter and the Sorcerer's Stone",
+// //       genre: 'Fantasy',
+// //       publish: 1997,
+// //       edition: 2010
+// //     },
+// //     {
+// //       title: 'The Hobbit',
+// //       genre: 'Fantasy',
+// //       publish: 1937,
+// //       edition: 2000
+// //     }
+// //   ]
+
+//   userBooks = books.filter( (book) => book.publish>1950 )
+// //   [
+// //     {
+// //       title: "Harry Potter and the Sorcerer's Stone",
+// //       genre: 'Fantasy',
+// //       publish: 1997,
+// //       edition: 2010
+// //     },
+// //     {
+// //       title: 'To Kill a Mockingbird',
+// //       genre: 'Fiction',
+// //       publish: 1960,
+// //       edition: 2003
+// //     }
+// //   ]
+
+//   userBooks = books.filter( (book) => {book.publish>1950} )
+//   //    []  -   If we opened up scope {} we have to use return keyword.
+
+//   userBooks = books.filter( (book) => {return book.publish>1950} )
+// //   [
+// //     {
+// //       title: "Harry Potter and the Sorcerer's Stone",
+// //       genre: 'Fantasy',
+// //       publish: 1997,
+// //       edition: 2010
+// //     },
+// //     {
+// //       title: 'To Kill a Mockingbird',
+// //       genre: 'Fiction',
+// //       publish: 1960,
+// //       edition: 2003
+// //     }
+// //   ]
+
+// userBooks = books.filter( (book) => {
+//     return book.edition>2000 && book.genre === 'Fantasy'} )
+
+// console.log(userBooks);
+
+
+
+
+/*          *****   Map     *****         */
+const myNumber = [1,2,3,4,5,6,7,8,9]
+
+// let newNums = myNumber.map( (num) => num+=10 )
+// // [11,12,13,14,15,16,17,18,19]
+
+// let newNums = myNumber.map( (num) => {num+=10} )
+// // [undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined]
+
+// let newNums = myNumber.map( (num) => {return num+=10} )
+// // [11,12,13,14,15,16,17,18,19]
+
+/*      Chaining    -    It has no limits       */
+/*  newNums = myNumber.map().map()
+    newNums = myNumber.map().filter()
+    newNums = myNumber.filter().filter()    
+    In first everthing passed is of second      */
+newNums = myNumber.map( (num) => num * 10).map( (num) => num+=100 ).filter( (num) => num>150 )
+
+// console.log(newNums);
+
+
+
+
+/*          *****    Reduce --  billing and all     *****         */
+let myNum = [1,2,3,4,5]
+
+// let mySum = myNum.reduce(function ( acc, curVal ) {
+//   console.log(`acc: ${acc} and current value: ${curVal}`);
+//     return acc + curVal
+// },5 )       //  First value of acc, after that anything that return. 
+// console.log(mySum);
+
+// let myTotal = myNum.reduce( (acc, curVal) => acc+curVal,0  )
+// console.log(myTotal);
+
+const shoppingCart = [
+  {
+    itemName : "Javascript",
+    price: 899
+  },
+  {
+    itemName : "Java",
+    price: 499
+  },
+  {
+    itemName : "Python",
+    price: 459
+  },
+  {
+    itemName : "Cpp",
+    price: 399
+  },
+]
+// const priceToPay = shoppingCart.reduce( (acc,item) => acc+item.price, 0)
+// console.log(priceToPay)
