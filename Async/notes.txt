@@ -1,0 +1,35 @@
+Javascript  {Default}
+    1. Synchronous      [   One by one execution of code.   ] 
+    2. Single Threaded  [   At one thread everything is executed - comperevitily slow language (But never work alone)   ]
+
+Execution Context
+    1. Execute one line of code at a time
+    2. Each operation waitsfor the last one to complete before executing
+        Call Stack      Memory Heap
+
+Blocking Code and Non Blocking Code
+    BC - block the flow of program  -   read file Sync 
+    NBC - don't block execution     -   read file Async 
+
+Files are read in node js and not in Javascript.
+
+Javascript Engine - alone Javascript
+Web API -> DOM      OR      Environment -> Node 
+Promise Queue / High Priority Queue
+Task Queue
+
+Web API - set remainder for some Task   {   Register Call Back  }
+|-> Set Timeout, Set Interval, Fetch() 
+|-> RCB - register all the events
+
+Task Queue - to set order for the tasks in Web API or Environment.
+
+A Stack Process
+{Call Stack} JS Engine ->{Call}  [ Web API/Environment ->{events} Register Call Back ] -> {task} Task Queue ->  {Add to Call Stack} JS Engine [Call Stack]    
+
+For example:
+1
+(0),2   -    It will take time to get call as event.
+3   -   Till that time this will be executed.
+
+Fetch() -   Similar as Task Queue but with some Priority.   -   {Promise}

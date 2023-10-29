@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="upperBody">
+        <h1 class="heading" id="title"> Learnig Document Object Model </h1>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. quae quod similique debitis. </p>
+    </div>
+    <div class="midBody">
+        <h3>1 first ipsum dolor sit amet consectetur adipisicing elit. Iste explicabo accusantium </h3>
+        <h3>2 second ipsum dolor sit amet consectetur adipisicing elit. Iste explicabo accusantium </h3>
+        <h3>3 third ipsum dolor sit amet consectetur adipisicing elit. Iste explicabo accusantium </h3>
+        <input type="password" name="password" id="queryPassword">
+        <ul>
+            <li class="list-items">Pehla</li>
+            <li class="list-items">Dusra</li>
+            <li class="list-items">Tesara</li>
+            <li class="list-items">Choatha</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+
+<!-- 
+        {GET Element}
+    *   document.getElementById('title')
+        <h1 class=​"heading" id=​"title">​ Learnig Document Object Model ​</h1>​
+    *   document.getElementById('title').class
+        undefined
+    *   document.getElementById('title').classname
+        undefined
+    *   document.getElementById('title').className
+        'heading'
+
+
+        {GET Attributes}
+    *    document.getElementById('title').getAttribute
+        ƒ getAttribute() { [native code] }
+    *    document.getElementById('title').getAttribute()
+        VM302:1 Uncaught TypeError: Failed to execute 'getAttribute' on 'Element': 1 argument required, but only 0 present.
+        at <anonymous>:1:34
+        (anonymous) @ VM302:1
+    *   document.getElementById('title').getAttribute('class')
+        'heading'
+
+
+         {SET Attributes}
+    *   document.getElementById('title').setAttribute('class', 'test heading')
+        undefined
+    *   document.getElementById('title').getAttribute('class')
+        'test heading'
+    *   document.getElementById('title').setAttribute('class', 'test')
+        undefined
+    *   document.getElementById('title').getAttribute('class')
+        'test'
+
+        
+        { Storing in a variable }
+    *   const title = document.getElementById('title').getAttribute('class')
+        undefined
+    *   title
+        'heading'   
+        // title - an object. 
+    *   temp = document.getElementById('title')
+        <h1 class=​"test" id=​"title">​ Learnig Document Object Model ​</h1>​
+    *   temp
+        <h1 class=​"test" id=​"title">​ Learnig Document Object Model ​</h1>​
+    *   temp.style.backgroundColor = 'green'
+        'green'
+    *   temp.style.padding = '2rem'
+        '2rem' 
+    *   temp.style.borderRadius = '30px'
+        '30px'
+
+
+        { Query Selector - Gives only one value }
+    *   textContent - all the content inside the tag either css allow visibility or not.
+    *   innertext - only the text visible on the web page.
+    *   innerHTML - gives all html tags also with all info.  
+        // If no span is present in there
+    *   temp.textContent
+        ' Learnig Document Object Model '
+    *    temp.innerHTML
+        ' Learnig Document Object Model '
+    *    temp.innerText
+        ' Learnig Document Object Model '
+        
+        //  <span>Span Test</span> in <h1> tag
+    *   temp.innerHTML
+        ' Learnig Document Object Model <span>Span Test</span>'
+    *   temp.textContent
+        ' Learnig Document Object Model Span Test'
+    *   temp.innerText
+        ' Learnig Document Object Model Span Test'
+
+
+        { QuerySelector with CSS selector }
+    *   document.querySelector('h1')
+        <h1 class=​"heading" id=​"title">​ Learnig Document Object Model ​</h1>​
+    *   document.querySelector('h3')
+        <h3>​"1 first ipsum dolor sit amet consectetur adipisicing elit. Iste explicabo accusantium "</h3>​
+        - Gives first h1 tags on the page.
+        (   Support all CSS selector.   )
+    *   document.querySelector('#title')                [selecting By ID]
+        <h1 class=​"heading" id=​"title">​ Learnig Document Object Model ​</h1>​
+    *   document.querySelector('.midBody')              [selecting By Class]
+        <div class=​"midBody">​<h3>​…​</h3>​<h3>​…​</h3>​<h3>​…​</h3>​</div>​
+    *   document.querySelector('input[type="password"]')            [selecting By Input Type]
+        <input type=​"password" name=​"password" id=​"queryPassword">​
+    *   document.querySelector('p:first-child')
+
+
+        { Storing Whole list with querySelector }
+    *   document.querySelector('ul')
+        <ul>​…​</ul>​
+    *   const myList = document.querySelector('ul')
+        undefined
+    *   myList.querySelector('li')
+        <li>​…​</li>​
+    *   firstLI = myList.querySelector('li')
+        <li>​…​</li>​
+    *   firstLI
+        <li>​::marker​"Pehla"</li>​
+    *   firstLI.style.backgroundColor = 'green'
+        'green'
+    *   firstLI.style.margin = '1rem'
+        '1rem'
+    *   firstLI.innerText
+        'Pehla'
+    *   firstLI.innerText = 'First'
+        'First'
+
+
+        {   QuerySelectorAll   }
+    *   document.querySelectorAll('li')
+        NodeList(3) [li, li, li]
+        - We got node list not array        ((  Check prototypes for it.    ))
+        - We can convert nodelist into array.
+        
+        // Loops on them
+    *   const temp = document.querySelectorAll('li')
+        undefined
+    *    temp
+        NodeList(3) [li, li, li]
+    *   temp.style.backgroundColor = 'green'
+                # This is not possible even nodelist have only single value. 
+        VM168:1 Uncaught TypeError: Cannot set properties of undefined (setting 'backgroundColor')
+            at <anonymous>:1:28
+            (anonymous) @ VM168:1
+    *   temp[0].style.backgroundColor = 'green'
+        'green'
+    
+        [[  The difference between QuerySelector and QuerySelectorAll is about returning value datatype.    ]]
+    
+    *   temp.forEach(function (l) {
+            l.style.backgroundColor = 'green'
+        })
+        undefined
+
+
+        {{      Document getElementByClassName      }}
+
+    *   temp = document.getElementsByClassName('list-items')
+        HTMLCollection(4) [li.list-items, li.list-items, li.list-items, li.list-items]
+                - Here we get HTMLCollection which is again different from node-list and array.
+                - Here no specific prototype for LOOPING.
+
+
+        {{      DataType Conversion         }}
+                -   This allow all array prototypes to be applied on HTMLCllections and Node list.
+    *   Array.from(temp)
+        (4) [li.list-items, li.list-items, li.list-items, li.list-items]
+        0 : li.list-items
+        1 : li.list-items
+        2 : li.list-items
+        3 : li.list-items
+        length : 4
+        [[Prototype]] : Array(0)
+    *   const MyArray = Array.from(temp)
+        undefined           //  Storing Values
+
+
+        {{      Multiple Styling        }}
+    *   MyArray.forEach(function (l) {
+            l.style.backgroundColor = 'green';  
+            l.style.color = 'red';
+            l.style.padding = '1rem';
+            l.innerText = 'Hello World';
+        })
+        undefined
+    
+    
+
+    
+
+   
+    -->

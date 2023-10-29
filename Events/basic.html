@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Basics</title>
+</head>
+
+<body style="background-color: #212121; color: aliceblue">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <!--     // ==>  First Approach     -->
+            <!-- // Injecting inside html is not correct way for javascript, cause problem on scaling. 
+                {Not in React} -->
+            <!-- <li id ="first" onclick="alert('owl')"><img src="Images\Screenshot 2023-09-21 215533.png" alt="photo"></li> -->
+            <li id ="first"><img src="Images\img1.png" alt="photo"></li>
+            <li id ="second">First</li>
+            <li id="third">Second</li>
+            <li id="fourth">Third</li>
+            <li id="fifth">Fourth</li>
+            <li id="sixth"><a style="color: aliceblue;" href="www.google.com">Google.com</a></li>
+        </ul>
+    </div>
+</body>
+
+<!-- // // Events run sequencially. -->
+
+<script>
+
+    // // ==>  Second Approach
+    // // This method will provide less feature.       
+    // document.getElementById("second").onclick = function () {
+    //     alert('Second Clicked')
+    // }
+
+    // // ==>  Third Approach  -   Best Approach
+    // // Eventlistener    -   Many events at a time
+    // // ByDefault - False
+    // document.getElementById("third").addEventListener('click', function () {
+    //     alert('Third Clicked')
+    // }, false)
+
+    // // ==>  Fourth Approach     -   attachEvent()
+
+    // // ==>  Fifth Approach  -   jQuery  -   on
+
+
+    // // //   Event Object    -   e
+    // document.getElementById("fourth").addEventListener('click', function (e) {
+    //     console.log(e);
+    //     alert(e); 
+    //     // On click we get - PointerEvent {isTrusted: true, pointerId: 0, width: 1, height: 1, pressure: 0, …}
+    //     // An object - which give us many events like browser event{time, screen, arrow location} and environment events{related to mouse}.
+    // })
+
+    // Types of events - keyboard, mouse.
+    // Timestamp - time, date.
+    // Default Preventor - default behaviour
+    // ToElement
+    // Source Element
+    // Current Target
+    // Client Position - offset
+    // Alt Key, Ctrl Key, Shift Key, KeyCode
+
+
+    //  //  Event Propogation   ->   true - event capturing / false - event publining
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked images!!!");
+    // }, false)  
+    // document.getElementById('fifth').addEventListener('click', function(e){
+    //     console.log("click Me!!!");
+    // }, false)     
+    // // => First Inner element get started.
+    // // =>   It is a bubbling event go to upward from below.
+    // // basic.html:119 click Me!!!   -   li
+    // // clicked images!!!    -   ul
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked images!!!");
+    // }, true)  
+    // document.getElementById('fifth').addEventListener('click', function(e){
+    //     console.log("click Me!!!");
+    // }, true)  
+    // // => First outer element get started.
+    // // =>   It is a capturing event go to downward from above.
+    // // clicked images!!!    -   ul
+    // // basic.html:119 click Me!!!   -   li
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked images!!!");
+    // }, false)  
+    // document.getElementById('fifth').addEventListener('click', function(e){
+    //     console.log("click Me!!!");
+    // }, true)  
+    // // basic.html:132 click Me!!!   -   li   
+    // // basic.html:129 clicked images!!! -   ul
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked images!!!");
+    // }, true)  
+    // document.getElementById('fifth').addEventListener('click', function(e){
+    //     console.log("click Me!!!");
+    // }, false) 
+    // // basic.html:119 click Me!!!   -   li
+    // // clicked images!!!    -   ul 
+
+    // // //   When we DON'T WANT EVENT PASSING.
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked images!!!");
+    // }, false)  
+    // document.getElementById('fifth').addEventListener('click', function(e){
+    //     console.log("click Me!!!");
+    //     e.stopPropagation() //  *****
+    // }, false)  
+
+    // // //   When we DON'T WANT LINK TO DIRECT TO ITS SITE.
+    // document.getElementById('sixth').addEventListener('click',function(e){
+    //     console.log('Google Clicked')
+    //     e.preventDefault() 
+    // },false)
+
+
+    document.querySelector('#images').addEventListener('click', function(e){
+
+        // console.log(e);
+        // // PointerEvent {isTrusted: true, pointerId: 0, width: 1, height: 1, pressure: 0, …}
+        // // We get an object.
+
+        // console.log(e.target);
+        // // <li id="fourth">Third</li>
+        // // <img src="Images\img1.png" alt="photo">
+
+        // console.log(e.target.parentNode);
+        // // <ul id=​"images">​…​</ul>​
+        
+        // let removeIt = e.target
+        // //  //  //  For REMOVING ON CLICKING
+        // //  //  Method 1
+        // removeIt.remove()
+        // //  //  Method 2
+        // // removeIt.parentNode.removeChild(removeIt)
+
+
+        //  //  //  ?????????????????????????????????????????????
+        let target = console.log(e.target.tagName); 
+        if (target==='IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target;
+            removeIt.remove() 
+        }
+
+
+
+    }, false)
+
+
+         
+
+
+
+
+
+
+</script>
+
+</html>

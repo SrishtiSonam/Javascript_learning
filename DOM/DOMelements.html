@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom elements</title>
+    <style>
+        body{
+            background-color: #121212;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="class">Monday</div>
+        <div class="class">Tuesday</div>
+        <div class="class">Wednesday</div>
+        <div class="class">Thursday</div>
+        <div class="class">Friday</div>
+        <div class="class">Saturday</div>
+        <div class="class">Sunday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+
+    console.log(parent);
+    /*
+    We get parent CLASS.
+    <div class="parent">
+        <div class="class">Monday</div>
+        <div class="class">Tuesday</div>
+        <div class="class">Wednesday</div>
+        <div class="class">Thursday</div>
+        <div class="class">Friday</div>
+        <div class="class">Saturday</div>
+        <div class="class">Sunday</div>
+    </div>
+    */
+
+    console.log(parent.children);
+    /*
+    Here we get HTMLCollection.
+    HTMLCollection(7) [div.class, div.class, div.class, div.class, div.class, div.class, div.class]
+    */
+
+    console.log(parent.children[1].innerHTML);
+    /*
+    Tuesday
+    */
+
+    for(let i=0; i<parent.children.length; i++){
+        console.log(parent.children[i]);
+        console.log(parent.children[i].innerHTML);
+    }
+    /*
+        <div class=​"class">​Monday​</div>             DOMelements.html:93 
+    Monday                                          DOMelements.html:92 
+        <div class=​"class">​Tuesday​</div>​            DOMelements.html:93 
+    Tuesday                                         DOMelements.html:92 
+        <div class=​"class">​Wednesday​</div>​          DOMelements.html:93 
+    Wednesday                                       DOMelements.html:92 
+        <div class=​"class">​Thursday​</div>​           DOMelements.html:93 
+    Thursday                                        DOMelements.html:92 
+        <div class=​"class">​Friday​</div>​             DOMelements.html:93 
+    Friday                                          DOMelements.html:92 
+        <div class=​"class">​Saturday​</div>​           DOMelements.html:93 
+    Saturday                                        DOMelements.html:92 
+        <div class=​"class">​Sunday​</div>​             DOMelements.html:93 
+    Sunday                                          DOMelements.html:92
+    */
+
+    parent.children[1].style.color = "Orange";
+    //      The color get changed.
+
+    console.log(parent.firstElementChild);
+    //      <div class=​"class">​Monday​</div> 
+    
+    console.log(parent.lastElementChild);
+    //      <div class=​"class">​Sunday​</div>
+
+
+    //  //  //  //  //              Traversing              //  //  //  //
+
+    const dayOne = document.querySelector('.class')
+
+    console.log(dayOne);            //  -->     First Element   
+    //      <div class=​"class">​Monday​</div> 
+
+    console.log(dayOne.parentElement);
+    /*      
+    <div class="parent">
+        <div class="class">Monday</div>
+        <div class="class" style="color: orange;">Tuesday</div>
+        <div class="class">Wednesday</div>
+        <div class="class">Thursday</div>
+        <div class="class">Friday</div>
+        <div class="class">Saturday</div>
+        <div class="class">Sunday</div>
+    </div>
+    */
+
+    console.log(dayOne.nextElementSibling);
+    //      <div class="class" style="color: orange;">Tuesday</div>
+
+
+    console.log("Nodes: ", parent.childNodes);
+    //      ##  A tree structure    ##
+    /*
+    Nodes:  NodeList(15) [text, div.class, text, div.class, text, div.class, text, div.class, text, div.class, text, div.class, text, div.class, text]
+    */
+   //   text - enter    (\n)
+   //   div.class - <div class="class">Monday</div>
+   //   2 elements increases - one adding a single comment
+
+
+    //  //  //  //  //              Creating New Element              //  //  //  //
+
+    const div = document.createElement('div')
+    console.log(div)
+    //  <div></div>
+    const h1 = document.createElement('h1')
+    console.log(h1)
+    //  <h1></h1>
+
+    div.className = "divName";
+    div.id = Math.random()*10;
+
+    h1.id = "h1ID";
+    h1.className = Math.round(Math.random()*10 +1)
+
+    div.setAttribute("title","generateTitle")
+    // <div class="divName" id="2.4681203577719146" title="generateTitle"></div>
+    h1.style.padding = '1rem'
+    // <h1 id="h1ID" class="7" style="padding: 1rem;"></h1>
+
+    h1.innerHTML = "Chai OR Code"
+    // <h1 id="h1ID" class="6" style="padding: 1rem;">Chai OR Code</h1>
+
+    /*
+        Yellow - diretly set
+        Blue - Override karta hy value ko, first bring the value then set
+    */
+
+    // 2 yellow lines to repalce one blue line - two trip each
+    const addText = document.createTextNode("Chai Or Code")
+    div.appendChild(addText)
+    
+    // For displaying on screen 
+    document.body.appendChild(div)
+
+</script>
+</html>
