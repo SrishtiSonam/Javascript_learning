@@ -8,8 +8,9 @@
 //     'z':'c',
 // }
 
+// Here keys are also put in ''.
 
-// // Sometimes we get data through array
+// // Sometimes we get data through array ( usually in object form )
 // [
 //     {},
 //     {},
