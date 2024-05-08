@@ -1,5 +1,9 @@
+//      ##########      Working of Memory and Threads in JS        ############
+
 /* 
         There are two types of memories :   Stack (Primitive) and Heap (Non-Primitive) 
+        Stack -> New variable new block
+        Heap -> Refers to address for original value
 */
 
 /*
@@ -13,7 +17,8 @@ console.log(otherState);
 otherState = "Himachal Pradesh"
 console.log(myState);
 console.log(otherState);
-
+// Value of original variable does not change on changing the values of copied variable.
+// As new variable new block, it actually gets the copy, no relation with original one.
 
 let userone = {
         name:"Srishti",
@@ -22,8 +27,7 @@ let userone = {
 let usertwo = userone;
 console.log(userone);
 console.log(usertwo);
-usertwo.age = 20;       // This will bring change in both the users.
+usertwo.age = 20;       // This will bring change in both the users as address of value is refered.
 console.log(userone);
 console.log(usertwo);
-
-
+// Here both the users points towards the same address.
