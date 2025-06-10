@@ -6,25 +6,30 @@ Learning Javascript through youtube playlist of "hitesh choudhary - Chai aur Cod
 
 Js is executed on browser or in environment.
 
+
 Difference between .js and .txt file :-
     They both can be treated as source code.
-    Source code in js file folds special meaning.
+    Source code in js file holds special meaning.
     All programming languages comes up with there own extension.
     If we inject js file in a software then it will get executed.
-    All the softwares have a capability to understand the structure of a syntax.
+    All the softwares have a capability to understand the structure of a syntax, accept the file with the help of extension.
     Software accept the file with respect of its syntax.    [ Software - Compiler or Interpretor ]
+
 
 In case of JS this software,
     * was hidden inside the browser for many years. 
         It was not easily available. 
+        Console or browser were used to run js.
         Its configuration and setup was a task for users.
     * nowadays these software are made standalone and easily availave for execution. 
         Now Js is not just a browser language or frontend language, it is now used for backend, mobile applications, pretty much everywhere.
+
 
 Environment for javascript,
     Node js, env and installation similar to python.
     V8 engine.
     Deno js ( founder same as node js )
+
 
 Install node. Check version by "node -v".   And run files by "node filename.js"
 

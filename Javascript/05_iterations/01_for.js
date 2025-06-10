@@ -10,7 +10,6 @@ for (let index = 0; index < 10; index++) {
 
 // Ctrl + d     to get cursor at all duplicates
 
-
 // for (i=1;i<=3;i++){
 //     console.log(`${i} outer loop number.`);
 //     for (j=1;j<=3;j++){

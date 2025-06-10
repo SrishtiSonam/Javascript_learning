@@ -9,11 +9,16 @@
 //     console.log("t");
 //     console.log("i");
 // }
-// sayMyName()
+
+// sayMyName    -   Reference  
+// sayMyName()  -   Execution
+
+
 
 // function sumOfTwo(num1, num2){          // num1, num2 are parameter
 //     console.log(num1+num2);
 // }
+
 // // sumOfTwo()       //  NaN         as NO ARGUMENTS ARE THERE
 // sumOfTwo(2,4)       // 6
 // sumOfTwo("2",4)     // 24
@@ -24,6 +29,7 @@
 //Tring to store this in a variable
 // let result = sumOfTwo(4,8)
 // console.log(result);            // undefined 
+
 
 
 // Return 
@@ -43,6 +49,9 @@
 // let productResult = returnProductOfTwo(6, 8)
 // console.log(productResult);
 
+
+
+// undefined, "" - false
 
 // function userLoginMessage(username){
 //     if (username === undefined){

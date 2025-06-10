@@ -6,7 +6,10 @@
 // console.log(b);
 // console.log(c);
 
-// {}      // This is what we call scope. Function, if-else, loops, not in object there it is for object declaraction else where it is scope
+
+// {}      // This is what we call scope. Function, if-else, loops, 
+                // not in object there it is for object declaraction else where it is scope
+
 
 // if (true) {
 //     let x = 100
@@ -31,7 +34,11 @@
 // console.log(c)          // 30
 
 
-// /*  Global scope is available for block but vice-versa sholud not be there. */
+
+// /*  Global scope is available for block but vice-versa should not be there. */
+
+// Global scope is different in node environment and in console environment.
+
 
 
 // function one(){
@@ -60,6 +67,8 @@
 // // console.log(username)       // username is not defined
 
 
+
+// ********************************************************************************
 // console.log(addOne(5))          // Earlier calling will not show any error in js 
 // function addOne (num) {
 //     return num+1

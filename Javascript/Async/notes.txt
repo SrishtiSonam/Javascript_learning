@@ -1,22 +1,38 @@
+{{  All time related events here are Async Code - as code is not getting blocked - not always sending request to web api. }}
+
+
 Javascript  {Default}
     1. Synchronous      [   One by one execution of code.   ] 
-    2. Single Threaded  [   At one thread everything is executed - comperevitily slow language (But never work alone)   ]
+    2. Single Threaded  [   At one thread everything is executed - comperevitily slow language 
+                            (But never work alone, always with an Environment.)   ]
+
 
 Execution Context
     1. Execute one line of code at a time
     2. Each operation waitsfor the last one to complete before executing
         Call Stack      Memory Heap
 
+
 Blocking Code and Non Blocking Code
     BC - block the flow of program  -   read file Sync 
     NBC - don't block execution     -   read file Async 
 
-Files are read in node js and not in Javascript.
 
-Javascript Engine - alone Javascript
+Files are read in node js and not in Javascript - context is given to kernel - then kernel access the file {database}.
+
+
+Javascript Engine - alone Javascript    { Memory Heap + Call Stack }
 Web API -> DOM      OR      Environment -> Node 
 Promise Queue / High Priority Queue
 Task Queue
+
+
+Call Stack {one function stack}, calls Set Timeout {which is present in web APIs} -> This make a note in Register Call Back.
+RCB moves this task in Task Queue, which add those task again to Call Stack.
+
+If the Call Stack {one function stack}, calls Fetch - then it makes a Promise and goes to High Priority Queue.
+From this HPQ, task moves to Call Stack with a Priority.
+
 
 Web API - set remainder for some Task   {   Register Call Back  }
 |-> Set Timeout, Set Interval, Fetch() 
@@ -24,8 +40,11 @@ Web API - set remainder for some Task   {   Register Call Back  }
 
 Task Queue - to set order for the tasks in Web API or Environment.
 
-A Stack Process
+
+**A Stack Process**
 {Call Stack} JS Engine ->{Call}  [ Web API/Environment ->{events} Register Call Back ] -> {task} Task Queue ->  {Add to Call Stack} JS Engine [Call Stack]    
+
+
 
 For example:
 1

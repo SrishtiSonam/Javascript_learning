@@ -11,17 +11,24 @@
 // console.log(myArray2);          // [ 'hello', 'hi', 'good' ]
 // console.log(myArray2[1]);           // hi
 
+
+
 // /* 
 //     Shallow copy - Same Reference Point      { Array }
 //     Deep copy - simply a copy of original
 // */
+
+
 
 // /*
 //     array -> prototype {Array} -> prototype {Object}     -   [[ Prototype Chaining ]]
 // */
 
 
+
+
 // /*          **********          Array Methods           **********           */
+
 // let myArray = [1,2,3,4]
 
 // console.log(myArray.length)      // 4
@@ -39,16 +46,22 @@
 // myArray.shift()
 // console.log(myArray);           // [ 1, 2, 3, 4, 6 ]     -   Remove element from start
 
+
 // myArray.push(3)
 // console.log(myArray.includes(3));       // true      -   Questionaries return boolean values
 // console.log(myArray.indexOf(4));        // 3
 // console.log(myArray.lastIndexOf(2));        // 1
 // console.log(myArray.indexOf(14));       // -1
 
-// let newArray = myArray.join()
+
+// let newArray = myArray.join()        -       { Array -> String }
 // console.log(myArray);
 // console.log(newArray);
 // console.log(typeof newArray);           // string
+
+
+
+
 
 
 // /*          **********      Slice and Splice - { Return section of array }     **********             */
@@ -65,6 +78,9 @@
 
 
 
+
+
+
 // /*          **********       Joining two arrays         **********           */
 
 // const numArray1 = new Array(1,2,3,4,5,6,7,8,9)
@@ -73,6 +89,7 @@
 
 // numArray1.push(alphaArray1)      // Array nesting - Array inside array
 // console.log(numArray1);          // Second array as a single element
+
 // console.log(numArray1[9][4]);        // e
 
 
@@ -80,10 +97,11 @@
 // const alphaArray2 = new Array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h')
 // let concatArray = numArray2.concat(alphaArray2)          
     // // No nesting here
-    // //  Returns new array.     
+    // // Returns new array.     
     // // Has limitation - what if more than two arrays
 // console.log(concatArray);           // No change in original
 // console.log(numArray2);    
+
 
 
 // // Spread Operators
@@ -91,10 +109,13 @@
 // console.log(spreadArray);           // No change in original
 
 
+
 // let complexArray = [ 1, 2, [3, 4, 5], 6, [7, [8, 9]]]
 // let simplifiedArray = complexArray.flat(Infinity)       // We should give actual depth flat()
 // console.log(complexArray)
 // console.log(simplifiedArray)
+
+
 
 
 console.log(Array.isArray("Srishti"));      // false    -   Srishti is not an array

@@ -34,6 +34,7 @@
     //     alert('Second Clicked')
     // }
 
+
     // // ==>  Third Approach  -   Best Approach
     // // Eventlistener    -   Many events at a time
     // // ByDefault - False
@@ -41,19 +42,26 @@
     //     alert('Third Clicked')
     // }, false)
 
+    // 3rd parameter - true/false   { true - event capturing, false - event bubbling    }
+
+
     // // ==>  Fourth Approach     -   attachEvent()
 
+    
     // // ==>  Fifth Approach  -   jQuery  -   on
 
 
-    // // //   Event Object    -   e
+    // // //   Event Object    -   e    - get every time on event listening
     // document.getElementById("fourth").addEventListener('click', function (e) {
     //     console.log(e);
     //     alert(e); 
     //     // On click we get - PointerEvent {isTrusted: true, pointerId: 0, width: 1, height: 1, pressure: 0, …}
     //     // An object - which give us many events like browser event{time, screen, arrow location} and environment events{related to mouse}.
     // })
+    // Pointer Events - X, Y, Width, Height, Pressure, TiltX, TiltY, PointerType, Button, Buttons, IsPrimary, IsTrusted;
 
+
+    // ****************************************
     // Types of events - keyboard, mouse.
     // Timestamp - time, date.
     // Default Preventor - default behaviour
@@ -122,6 +130,7 @@
     // },false)
 
 
+    
     document.querySelector('#images').addEventListener('click', function(e){
 
         // console.log(e);

@@ -1,0 +1,25 @@
+.button {
+    height: 5rem;
+    width: 5rem;
+    display: inline-block;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    transition: box-shadow 0.2s;
+}
+.button#red {
+    background-color: red;
+}
+.button#yellow {
+    background-color: yellow;
+}
+.button#green {
+    background-color: green;
+}
+.button#blue {
+    background-color: blue;
+}
+.button:hover {
+    box-shadow: 0 0 10px #888;
+}

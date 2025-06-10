@@ -105,14 +105,19 @@
     //      <div class="class" style="color: orange;">Tuesday</div>
 
 
+
+
     console.log("Nodes: ", parent.childNodes);
-    //      ##  A tree structure    ##
+    //      ##  NodeList - A tree structure    ##
     /*
     Nodes:  NodeList(15) [text, div.class, text, div.class, text, div.class, text, div.class, text, div.class, text, div.class, text, div.class, text]
     */
-   //   text - enter    (\n)
+   //   text - enter    (\n)   - only one is count 
    //   div.class - <div class="class">Monday</div>
    //   2 elements increases - one adding a single comment
+
+
+
 
 
     //  //  //  //  //              Creating New Element              //  //  //  //
@@ -136,6 +141,7 @@
     // <h1 id="h1ID" class="7" style="padding: 1rem;"></h1>
 
     h1.innerHTML = "Chai OR Code"
+    // Bring the values by selecting them, then set the value. - 2 round trip
     // <h1 id="h1ID" class="6" style="padding: 1rem;">Chai OR Code</h1>
 
     /*
@@ -146,6 +152,7 @@
     // 2 yellow lines to repalce one blue line - two trip each
     const addText = document.createTextNode("Chai Or Code")
     div.appendChild(addText)
+    
     
     // For displaying on screen 
     document.body.appendChild(div)

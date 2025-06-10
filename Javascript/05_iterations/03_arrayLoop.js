@@ -91,6 +91,7 @@ myMap1.set('UK',"United Kingdom")
 // myMap2.set('py',"Python")
 // myMap2.set('cpp',"CPP")
 
+// ****************************************************************************************
 // for (const key in myMap2) {         // This is not iteratable so no error will be there 
 //     console.log(`${key}`)                   // Like nothing will be displayed 
 // }

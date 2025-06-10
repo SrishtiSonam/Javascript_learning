@@ -7,16 +7,18 @@ let scoreString = String(score)         // Class base.
 console.log(scoreString)
 console.log(typeof scoreString)
 
+
 console.log("string to number")
 let scoreCard = "12"
 console.log(typeof scoreCard)
 let numberScore = Number(scoreCard)     // to conver in number type
 console.log(numberScore)
 console.log(typeof numberScore)
-/*  string -> "56yrt" when converted in number -> NaN(Not a number) - special type */
+/*  string -> "56yrt" when converted in number -> NaN(Not a number) - special type - datatype number */
 /*  null when converted in number then result is 0 */
 /*  undefined when converted gives NaN */
 /*  boolean value returns 0 and 1 */
+
 
 console.log("boolean to number")
 let loggedIn = true
@@ -35,6 +37,8 @@ let isVerified = " "               // true for all except "" even for " "
 let isVerifiedInBoolean = Boolean(isVerified)     // to conver in number type
 console.log(isVerifiedInBoolean)
 console.log(typeof isVerifiedInBoolean)
+
+
 
 
 /*  Case of unique conversions. */ 

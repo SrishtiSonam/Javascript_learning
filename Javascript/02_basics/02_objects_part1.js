@@ -48,7 +48,9 @@ console.log(typeof Jsuser.mySym);          // undefined
 Jsuser.isLogedIn = true         // Overwriting the values 
 console.log(Jsuser["isLogedIn"]);
 
+
 // Object.freeze(Jsuser)        // Locking
+
 
 // Jsuser.isLogedIn = false         // After freezing no overwriting/changes  - still no display of error
 // console.log(Jsuser["isLogedIn"]);
@@ -56,14 +58,14 @@ console.log(Jsuser["isLogedIn"]);
 // console.log(Jsuser);
 
 
-/*          **********      Adding function to an object        **********           */
+/*          **********      Adding function - (functions treated as variables) to an object        **********           */
 
 Jsuser.greeting = function() {
     console.log("Hello js user");
 }
 
 Jsuser.greetingName = function(){
-    console.log(`Hello ${this.fullName}`);
+    console.log(`Hello ${this.fullName}`);              // this -> same object
 }
 
 // console.log(Jsuser[greeting]);          // not defined 
@@ -71,4 +73,4 @@ console.log(Jsuser["greeting"]);        // [Function (anonymous)]
 
 // console.log(Jsuser[greeting()]);            // not defined
 console.log(Jsuser.greeting());             // Hello js user \n undefined
-console.log(Jsuser.greetingName()); 
+console.log(Jsuser.greetingName());         // Hello Srishti \n undefined

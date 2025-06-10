@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Async </title>
+</head>
+<body>
+    <h1> Chai Aur Code </h1>
+    <button id="stop"> Stop </button>
+    <script>
+
+        // A Method that calls the Web Api also.
+        // 1. Handler - a function with no name.
+        // 2. Timeout 
+
+        //************************************
+        const print = () => {
+            console.log("Hello World");
+        }
+        setTimeout(print, 2000);
+
+        //************************************
+        const stopBtn = document.querySelector("#stop");
+        
+        const changeTest = () => {
+            stopBtn.innerHTML = "Async code";
+        }
+        const changeMe = setTimeout(changeTest, 10000);
+    
+        stopBtn.addEventListener("click", () => {
+            console.log("Button Clicked - Stopping the timer");
+            clearTimeout(changeMe);
+        });
+
+    </script>
+</body>
+</html>

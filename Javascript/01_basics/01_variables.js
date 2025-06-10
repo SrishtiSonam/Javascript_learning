@@ -2,9 +2,10 @@ console.log("Srishti")
 
 const accountNumber = 1234
 // Changing const is not allowed by node.js during analyzing the code.
+
 var accountName = "Srishti"
 let accountType = "Saving"
-accountEmail = "srishti@gmail.com"
+accountEmail = "srishti@gmail.com"      // the variable is implicitly declared in the global scope
 let accountState;       // Currently Undefined.
 
 /* 

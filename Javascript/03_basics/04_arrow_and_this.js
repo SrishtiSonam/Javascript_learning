@@ -1,9 +1,10 @@
 /*      'this'    with   objects     */
+
 // const user = {
 //     name : "Srishti",
 //     price : 999,
 //     welcomeMessage : function(){
-//         console.log(`${this.name}, welcome to website.`);      // Refering current context  -  this
+//         console.log(`${this.name}, welcome to website.`);      // Refering current context  -  this - 'user'
 //         console.log(this);      //    welcomeMessage: [Function: welcomeMessage]
 //     }
 // }
@@ -16,10 +17,12 @@
 // user.welcomeMessage()       // Shreya, welcome to website.
 
 
-// console.log(this);      // {}
+// console.log(this);      // {} - no context under global for node environment.
 
 
 /*  In window, console.log(this) => window  */
+
+
 
 
 /*      'this'    with   functions     */
@@ -65,11 +68,14 @@
 }
 */
 
+ 
+
 // function two() {
 //     let name = "Srishti" 
 //     console.log(this.name)          // undefined - does not work with functions
 // }
 // two()
+
 
 
 // /*          Different ways of declaring functions         */

@@ -3,7 +3,7 @@ console.log(score);
 
 // Morden way of writting
 const balance = new Number(100)         // As object - explicitly defined NUMBER
-console.log(balance);       // [Number: 100]        &&      Number {100} - In console
+console.log(balance);       // [Number: 100]        &&      Number {100} - In console [Including properties]
 
 /* Similar to string */
 

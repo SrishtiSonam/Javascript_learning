@@ -10,7 +10,7 @@
 /*  
                                 Primitive   -   7
         They are call by value, we get copy of the data. Changes are also made in copy.
-            String, Number, Boolean, null, undefined, Symbol, BigInt
+            String, Number, Boolean, null, undefined, **Symbol** , BigInt
 
  */
 
@@ -21,10 +21,12 @@
 */
 
 
+// {{ Ojects + Browser web Events  }}
+
 
 let email1;     
 let email2 = undefined
-        // Value for email is undefined for now.
+        // Value for email is undefined for both.
 
 // TYPEOF  BIGINT 
 const bigNumber = 1234567894885678n     // here n makes it BIGINT
@@ -44,7 +46,7 @@ let myObj = {                   // Object - Every thing inside curly brackets - 
         'b':2,                          
 }
 
-let myFnc = function(){         // Storing a function into a variable
+let myFnc = function() {         // Storing a function into a variable
         console.log("Hello World");
 }
 console.log(typeof myFnc);      // function - object function ( return of function )

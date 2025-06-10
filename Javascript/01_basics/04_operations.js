@@ -38,13 +38,14 @@
 // console.log(+true);     // 1     -   Here value is incremented.
 // console.log(true+);     // error      -   As it was not expected. 
 // console.log("");        //
-// console.log(+"");       // 0     -   Writing + converts it into boolean.
+// console.log(+"");       // 0     -   { Writing + converts it into boolean. }
 
 
 /*       Reduces the readability of the code, least suggested.     */
 
 // let num1, num2, num3
 // num1 = num2 = num3 = 4  
+
 
 let gameCounter = 100
 gameCounter++

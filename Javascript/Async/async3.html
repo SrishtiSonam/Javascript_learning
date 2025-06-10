@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key - Table</title>
+</head>
+<body>
+    <div class="project">
+        <div class="insert">
+            <div class="key">
+                <h1>Key - Table</h1>
+                <p>Press any key to see the key code.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const insert = document.querySelector(".insert");
+        window.addEventListener("keydown", (event) => {
+            insert.innerHTML = `
+                <div class="key">
+                    <h1>${event.key === " " ? "Space" : event.key}</h1>
+                    <p>Key Code: ${event.keyCode}</p>
+                    <p>Code: ${event.code}</p>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>

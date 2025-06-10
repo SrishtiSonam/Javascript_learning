@@ -26,6 +26,8 @@ let myDate = new Date()     // As object
 
 
 // console.log(myDate.toLocaleString());       // 22/08/2023, 19:25:45      // Object 
+
+
 /* Customizing Date according to your choice.  */
 myDate.toLocaleString('default', {             // Ctrl + Spacebar   after   'default'
     weekday:"long",

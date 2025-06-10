@@ -22,7 +22,7 @@
 
 <script>
 
-    /*      Brute Force Method      */
+    /*      Brute Force Method - Here we need to traverse whole tree      */
     function addLanguages(langName){
         const li = document.createElement('li')
         li.innerHTML = `${langName}`
@@ -30,7 +30,9 @@
     }
     addLanguages('Solidity');
 
+
 // const li - function scope
+
 
     /*      Optimize Method -   As tree is not traversed whole again and again     */
     function addOptiLanguages(langName){
@@ -41,7 +43,8 @@
     addOptiLanguages('Typescript');
 
 
-// Removing Values 
+
+// Replacing Values 
 
     const secondlang = document.querySelector("li:nth-child(2)")
     // secondlang.innerHTML = "MOJO"
@@ -51,6 +54,9 @@
 
     const firstlang = document.querySelector("li:first-child")
     firstlang.outerHTML = '<li>MOJO</li>' 
+
+
+// Remove 
 
     const lastlanguage = document.querySelector('li:last-child')
     lastlanguage.remove()

@@ -8,7 +8,7 @@
 //     'z':'c',
 // }
 
-// Here keys are also put in ''.
+// Here keys are also put in ''. {Both in string form, values - number, boolean, }
 
 // // Sometimes we get data through array ( usually in object form )
 // [
